@@ -1,0 +1,77 @@
+{
+  "name": "2100-frontend",
+  "version": "0.1.1",
+  "private": true,
+  "dependencies": {
+    "2100-contracts": "github:2100hq/2100-contracts#v0.2.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-regular-svg-icons": "^5.9.0",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@material-ui/core": "^4.4.2",
+    "axios": "^0.19.0",
+    "bignumber.js": "^9.0.0",
+    "bootstrap": "^4.3.1",
+    "d3": "^5.9.7",
+    "ethers": "^4.0.33",
+    "linkifyjs": "^2.1.8",
+    "moment": "^2.24.0",
+    "ms": "^2.1.2",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-audio-player": "^0.11.1",
+    "react-bootstrap": "1.0.0-beta.10",
+    "react-confetti": "^4.0.1",
+    "react-copy-to-clipboard": "^5.0.1",
+    "react-countup": "^4.2.1",
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.12.12",
+    "react-jazzicon": "^0.1.3",
+    "react-responsive": "^8.0.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "react-twitter-embed": "^2.0.8",
+    "react-vis": "^1.11.7",
+    "react-youtube": "^7.9.0",
+    "recharts": "^1.7.1",
+    "socket.io-client": "^2.2.0",
+    "web3-react": "^5.0.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "docker:start": "docker-compose stop dev && docker-compose up dev",
+    "docker:build:image": "docker-compose down && docker-compose build dev",
+    "docker:build": "npm run docker:build:image && docker-compose run --rm yarn-lock",
+    "build:docker": "node --expose-gc --max-old-space-size=32276 scripts/build.js",
+    "build": "react-scripts build",
+    "build:dev": "env-cmd -f .env.development npm run build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "standard": "standard --verbose --fix",
+    "prettier": "prettier-standard '**/*.js' --ignore-path=./scripts",
+    "standardize": "npm run prettier && npm run standard --fix",
+    "deploy:prod": "git pull && yarn install && npm run build && firebase deploy -P prod",
+    "deploy:dev": "git pull && yarn install && npm run build:dev && firebase deploy -P dev"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "env-cmd": "^10.0.1",
+    "prettier-standard": "^8.0.0",
+    "standard": "^11.0.0"
+  },
+  "license": "UNLICENSED"
+}

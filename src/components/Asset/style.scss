@@ -1,0 +1,127 @@
+.Asset {
+    .profile {
+        margin-top: 20px;
+        vertical-align: middle;
+        background-color: #ededed;
+        padding: 10px 20px;
+        border-radius: 2px;
+        span {
+            vertical-align: middle;
+            display: inline-block;
+        }
+        img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+        .profile-info {
+            padding: 10px;
+        }
+        .profile-name {
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        .profile-username {
+            font-style: italic;
+        }
+    }
+
+    .minting-stats {
+        margin-top: 20px;
+        >div {
+            border-top: 1px solid black;
+            padding: 15px 10px;
+        }
+
+        .total-minted {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            flex-direction: row;
+            .progress {
+                width: 175px;
+            }
+            >div {
+                margin: 4px 8px;
+                height: 25px;
+            }
+        }
+
+        .total-user-minting {
+            vertical-align: middle;
+            >span {
+                display: inline-block;
+                width: 30%;
+            }
+            .Allocator {
+                display: inline-block;
+                width: 70%;
+                padding: 10px;
+                .form-group {
+                    margin: 0;
+                }
+            }
+        } 
+        
+        .total-minting {
+            .fa-angle-double-up {
+                color: #69b3a2;
+            }
+            .asset-staking-chart-axis {
+                font-size: 8px;
+                path {
+                    stroke: gray;
+                }
+                line, text {
+                    color: gray;
+                }
+            }
+            #asset-minting-chart {
+                .asset-staking-line {
+                    fill: #cce5df;
+                    stroke: #69b3a2;
+                }
+                height: 150px;
+            }            
+        }
+    }
+
+    .emissions {
+        margin-top: 20px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        .chart {
+            height: 400px;
+        }
+    }
+
+    .Related-assets {
+        margin-top: 20px;
+        .related-header {
+            background-color: #ededed;
+            padding: 10px;
+            font-weight: bold;
+            border-bottom: 1px solid black;
+        }
+        .AssetThumbnail {
+            // background-color: red;
+            padding: 4px 0px;
+            margin-bottom: 10px;
+        }
+    }
+
+    #emissions-chart {
+        path {
+            fill: none;
+        }
+        .emissions-line {
+            stroke: #1e90ff;
+        }
+        .emissions-hline {
+            stroke: black;
+        }
+        .user-emissions-line {
+            fill: lightblue;
+        }
+    }
+}

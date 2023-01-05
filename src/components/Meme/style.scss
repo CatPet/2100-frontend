@@ -1,0 +1,50 @@
+@import "node_modules/bootstrap/scss/_functions.scss";
+@import "node_modules/bootstrap/scss/_variables.scss";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+@include media-breakpoint-up(sm) { }
+@include media-breakpoint-up(md) { }
+@include media-breakpoint-up(lg) { }
+@include media-breakpoint-up(xl) { }
+@include media-breakpoint-up(sm) { }
+
+.meme{
+	position: relative;
+	font-family: impact;
+	font-size: 1.3em;
+	text-transform: uppercase;
+	color: white;
+	letter-spacing: 1px;
+	text-shadow: 1px 1px 0 #000,
+	-1px -1px 0 #000,
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	0px 1px 0 #000,
+	1px 0px 0 #000,
+	0px -1px 0 #000,
+	-1px 0px 0 #000,
+	1px 1px 5px #000;
+
+	img{
+		width: 100%;
+	}
+
+	.toptext, .bottomtext{
+		position: absolute;
+		text-align: center;
+		left: 0;
+		right: 0;
+		margin: 0.2rem 0;
+	}
+
+	.toptext{
+		top: 0;
+	}
+
+	.bottomtext{
+
+		bottom: 0;
+	}
+
+}

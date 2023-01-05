@@ -1,0 +1,50 @@
+@import "node_modules/bootstrap/scss/_functions.scss";
+@import "node_modules/bootstrap/scss/_variables.scss";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+
+
+
+
+.create-token {
+  border: inherit !important;
+  padding: 2rem;
+
+@include media-breakpoint-up(md) { 
+    height: 100vh;
+}
+
+
+  .tweet-content, input{
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem 0;
+    display: inline-block;
+    border: 1px solid lightblue;
+    border-radius: 3px;
+    margin-right: 1rem;
+  }
+  i+a,img+a{
+    margin-left: 0.5rem;
+  }
+
+  input {
+    line-height: 1rem;
+    width: 25rem;
+  }
+
+  .already {
+    div {
+      display: inline-block;
+    }
+    div+div{
+      margin-left: 1rem;
+    }
+    .humanitydao-logo {
+      width: 16px;
+    }
+  }
+
+  .match-text {
+    // border-bottom: 1px solid lightblue;
+  }
+}

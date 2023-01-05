@@ -1,0 +1,39 @@
+@import "../../../Variables";
+
+.message-form .form-group{
+  margin-bottom: 0;
+}
+
+.fixed-message-form {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 1rem;
+  width: 50%;
+  max-width: 550px;
+  min-width: 350px;
+  padding: 0 0 2rem 0;
+  overflow-y: scroll;
+  z-index: 2;
+  background: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+  box-shadow: -0px -0px 20px 0px rgba(0,0,0,0.1);
+
+  & .send-ui {
+  }
+}
+
+.compose-header{
+  background-color: $twentyoneprimary;
+  color:white;
+}
+
+.close {
+  color: white !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}

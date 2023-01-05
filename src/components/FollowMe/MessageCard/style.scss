@@ -1,0 +1,249 @@
+@import "../../../Variables";
+
+$message-margin: 0.3rem;
+
+.message-card{
+	position: relative;
+	overflow: hidden;
+	padding: 1.1rem;
+
+	@media (max-width: 420px) {
+		.main-photo .profile-image {
+			width: 30px !important;
+			height: 30px !important;
+		}
+	}
+
+	.badge {
+		font-family: "Inter UI", sans-serif;
+		font-weight: 500;
+		font-size: 10px;
+		color: #333;
+		border: 1px solid #eee;
+		background: #fff !important;
+		margin-right: 6px;
+		i {
+			font-size: 10px;
+		}
+
+		&.span{
+			display: inline-block;
+		}
+
+		&.badge-light {
+			height: 25px;
+			display: inline-flex;
+			align-items: center;
+			flex-flow: row nowrap;
+			padding-left: 5px !important;
+			padding-right: 5px !important;
+		}
+
+		&.comment-bubble{
+			&:hover{
+				cursor: pointer;
+			}
+		}
+
+	}
+
+	&.message-hidden{
+		background-color: #fff;
+		border-bottom: 1px solid #eee;
+	}
+
+	&:not(.message-hidden){
+		border-bottom: 1px solid #eee;
+		.message-body{
+			padding: 0.5rem;
+		}
+
+		.badge{
+			background-color: transparent;
+			border: none;
+		}
+	}
+
+	&:hover{
+		.message-share, .message-delete{
+			opacity: 1;
+			transition: linear 0.2s all;
+		}
+
+	}
+
+	.message-share, .message-delete{
+		position: absolute;
+		color: #aaa;
+		right: 1.5rem;
+		z-index: 9999999;
+		opacity: 0;
+
+		&:hover{
+			color: #333;
+		}
+
+		transition: linear 1s color;
+	}
+
+	.message-share{
+		bottom: 1rem;
+	}
+
+	.message-delete{
+		top: 1rem;
+	}
+
+	.message-copy-url{
+		opacity: 1;
+	}
+
+	.profile-image{
+		max-width: 45px;
+		max-height: 45px;
+	}
+
+	.decode-button {
+		font-weight: bold;
+		background: #fff;
+		border: 1px solid #2AC88F;
+		color: #2AC88F;
+		transition: all 0.1s ease-in-out;
+		padding-top: 4px;
+		padding-bottom: 3px;
+		&:hover {
+			border-color: 1px solid #2AC88F !important;
+			background-color: #2AC88F !important;
+			color: #fff;
+		}
+	}
+
+	.comment-bubble {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		i {
+			margin-right: 3px;
+		}
+		&.comment-count-changed {
+			background-color: #fff8db !important;
+		}
+	}
+
+	.message-time{
+		font-family: "Inter", sans-serif;
+		display: block;
+		font-weight: 400;
+		margin-top: 8px;
+		color: #777777;
+		font-size: 10px;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			color: #535ac2;
+		}
+	}
+
+	.hold-to-see{
+		font-size: 0.9rem;
+
+		.reveal-amount{
+			font-size: 0.7rem;
+			font-family: "Inter", sans-serif;
+			font-weight: 500;
+			padding: 2px 5px;
+			background-color: $twentyonemuted;
+			color: #333;
+			border-radius: 2px;
+			border: 1px solid #eee;
+		}
+
+		.reveal-name{
+		}
+	}
+
+
+
+	.time-to-decode {
+		font-weight: 400;
+		font-size: 12px;
+		color: #c4c4c4;
+		transition: all 0.3s ease-in-out;
+		cursor: default;
+		&:hover {
+			color: #535ac2;
+		}
+	}
+
+	.message-header{
+		.message-hint{
+			font-family: "Noto Serif JP", serif;
+			font-weight: 700;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: border 0.2s linear;
+			background: none;
+			background-size: 0%;
+			border-bottom: solid 1px transparent;
+			&:hover{
+				border-bottom: solid 1px #000;
+			}
+		}
+	}
+
+	.message-body{
+
+		.fake-hidden-message{
+			margin-top: $message-margin;
+			.rectangle{
+				display: inline-block;
+				height: 15px;
+				margin-right: 10px;
+				background: repeating-linear-gradient(
+					-55deg,
+					$twentyonemuted,
+					$twentyonemuted 10px,
+					darken($twentyonemuted,5%) 10px,
+					darken($twentyonemuted,5%) 20px
+					);
+				border-radius: $twentyoneborderradius;
+				&.r1{
+					width: 100px;
+				}
+
+				&.r2{
+					width: 100px;
+				}
+
+				&.r3{
+					width: 100px;
+				}
+			}
+
+		}
+		.hidden-text{
+			margin-top: $message-margin;
+		}
+	}
+
+	.message-footer{
+		margin-top: $message-margin;
+
+		.col {
+			display: flex !important;
+			flex-flow: row nowrap;
+			align-items: center;
+			margin-top: 5px;
+			.holders-profiles {
+				font-family: "Inter", sans-serif;
+				display: flex !important;
+				flex-flow: row nowrap;
+				align-items: center;
+			}
+			.holders-profiles.no-holders {
+				font-weight: 400;
+			} 
+		}
+
+	}
+
+}

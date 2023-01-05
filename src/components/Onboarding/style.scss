@@ -1,0 +1,35 @@
+
+.onboarding{
+
+	.onboarding-body{
+		text-align: center;
+	}
+
+
+	font-size: 1.2rem;
+
+	a{
+		font-weight: bold;
+	}
+
+	.section{
+		padding: 4rem 0;
+		border-bottom: 1px solid #eee;
+	}
+
+	.modal{
+		overflow-y: hidden;
+
+	}
+	.modal-dialog{
+		margin: 5vh 5vw;
+		min-width: 90vw;
+
+	}
+
+	.modal-content{
+		min-height: 90vh;
+		padding: 10rem;
+	}
+
+}

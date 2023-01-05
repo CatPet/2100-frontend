@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: 'Dockerfile'
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: "npm start"
+
+  bash:
+    image: 2100-frontend_dev:latest
+    command: '/bin/bash'
+    network_mode: "host"
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+  yarn-lock:
+    image: 2100-frontend_dev:latest
+    command: 'yarn install'
+    network_mode: "host"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+  ganache:
+      image: trufflesuite/ganache-cli:latest
+      command: "node /app/ganache-core.docker.cli.js --db /db --accounts 10  -e 999 --blockTime 5 --networkId 21 --mnemonic '${GANACHE_MNEMONIC}'"
+      volumes:
+        - ./ganache:/db
+      ports:
+        - "8545:8545"
+      env_file:
+         - .env
